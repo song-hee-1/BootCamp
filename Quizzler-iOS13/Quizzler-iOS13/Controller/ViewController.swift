@@ -15,11 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet var trueButton: UIButton!
     @IBOutlet var falseButton: UIButton!
     
-    var timer = Timer()
+    @IBOutlet var lblScore: UILabel!
     
-   
+var quizBrain = QuizBrain()
     
-    var questionNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,33 +31,29 @@ class ViewController: UIViewController {
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-        let userAnswer = sender.currentTitle
-        let actualAnswer = quiz[questionNumber].answer
-        
-        if userAnswer == actualAnswer {
+        let userAnswer = sender.currentTitle!
+        let userGotItRight = quizBrain.checkAnswer(userAnswer)
+         
+        if userGotItRight{
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red
         }
     
+        quizBrain.nextQuestion()
         
-        if questionNumber + 1 < quiz.count {
-        questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-
-        updateUI()
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector((updateUI)), userInfo: nil, repeats: false)
     }
     
     @objc func updateUI() {
-        lblQuestion.text = quiz[questionNumber].text
+        lblQuestion.text = quizBrain.getQuestionText()
+        progressBar.progress = quizBrain.getProgress()
+        lblScore.text = "Score : \(quizBrain.getScore())"
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
-        let percentageProgress = Float(questionNumber + 1) / Float(quiz.count)
-        progressBar.progress = percentageProgress
+
     }
+    
     
     
     
