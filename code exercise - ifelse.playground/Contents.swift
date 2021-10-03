@@ -10,6 +10,11 @@ The 3 conditions for any given year to be a leap year are :
  
  */
 
+
+
+
+
+
 var aYear =  Int(readLine()!)!
 
 func isLeap(year: Int) {

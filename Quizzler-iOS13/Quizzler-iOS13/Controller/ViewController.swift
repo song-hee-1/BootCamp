@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var lblScore: UILabel!
     
-var quizBrain = QuizBrain()
+    var quizBrain = QuizBrain()
     
     
     override func viewDidLoad() {

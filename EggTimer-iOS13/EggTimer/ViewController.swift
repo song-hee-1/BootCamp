@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         secondsPassed = 0
         titleLabel.text = hardness
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateC   ounter), userInfo: nil, repeats: true)
         
     }
     
