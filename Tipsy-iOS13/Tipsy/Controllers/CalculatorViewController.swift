@@ -11,6 +11,10 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var tip = 0.10
+    var numberOfpeople = 2
+    var billTotal = 0.0
+    var billValue = "0.0"
+
     
 
     @IBOutlet var billTextField: UITextField!
@@ -23,19 +27,23 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func tipChanged(_ sender: UIButton) {
         
+        
+        billTextField.endEditing(true)
+        
         let buttonTitle = sender.currentTitle!
         
         zeroPctButton.isSelected = false
         tenPctButton.isSelected = false
         twentyPctButton.isSelected = false
-        
         sender.isSelected = true
         
         let buttonTitleMinusPercent = String(buttonTitle.dropLast())
         let buttonTitleNumber = Double(buttonTitleMinusPercent)!
         
         tip = buttonTitleNumber / 100
-        print(tip)
+
+
+        
     }
     
     
@@ -43,17 +51,32 @@ class CalculatorViewController: UIViewController {
         
         let stepperCurrentValue = String(format: "%.0f", sender.value)
         splitNumberLabel.text = stepperCurrentValue
+        numberOfpeople = Int(stepperCurrentValue)!
     }
     
 
-    @IBAction func CalculateButtonPressed(_ sender: UIButton,stepperCurrentValue:String) {
-       
-       print(stepperCurrentValue)
+    @IBAction func CalculateButtonPressed(_ sender: UIButton) {
+        let bill = billTextField.text!
         
+        if bill != "" {
+            billTotal =  Double(bill)!
+            let result = billTotal * ( 1 + tip ) / Double(numberOfpeople)
+            billValue = String(format: "%.2f", result)
+        }
+        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
-    
-    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.billValue = billValue
+            destinationVC.numberOfPeopleValue = numberOfpeople
+            destinationVC.tipValue = Int(tip *  100)
+            
+            
+        }
+        
+    }
     
     
 
