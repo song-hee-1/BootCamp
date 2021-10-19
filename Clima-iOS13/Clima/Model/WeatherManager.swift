@@ -37,10 +37,14 @@ private var apiKey : String {
 
 
 struct WeatherManager {
+<<<<<<< HEAD
     
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?units=metric"
     
     var delegate : WeatherManagerDelegate?
+=======
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid={appid}&units=metric"
+>>>>>>> 7547201f35a820a960ef0ce677e04b02ec85219b
  
     func fetchWeather(cityName : String) {
         let urlString = "\(weatherURL)&q=\(cityName)&appid=\(apiKey)"
