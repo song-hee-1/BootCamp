@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		97F26F35270BE96700198AA5 /* optionalDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = optionalDemo; sourceTree = BUILT_PRODUCTS_DIR; };
+		97F26F35270BE96700198AA5 /* OptionalDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OptionalDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F26F38270BE96700198AA5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +49,7 @@
 		97F26F36270BE96700198AA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97F26F35270BE96700198AA5 /* optionalDemo */,
+				97F26F35270BE96700198AA5 /* OptionalDemo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,9 +65,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		97F26F34270BE96700198AA5 /* optionalDemo */ = {
+		97F26F34270BE96700198AA5 /* OptionalDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97F26F3C270BE96700198AA5 /* Build configuration list for PBXNativeTarget "optionalDemo" */;
+			buildConfigurationList = 97F26F3C270BE96700198AA5 /* Build configuration list for PBXNativeTarget "OptionalDemo" */;
 			buildPhases = (
 				97F26F31270BE96700198AA5 /* Sources */,
 				97F26F32270BE96700198AA5 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = optionalDemo;
+			name = OptionalDemo;
 			productName = optionalDemo;
-			productReference = 97F26F35270BE96700198AA5 /* optionalDemo */;
+			productReference = 97F26F35270BE96700198AA5 /* OptionalDemo */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 97F26F30270BE96700198AA5 /* Build configuration list for PBXProject "optionalDemo" */;
+			buildConfigurationList = 97F26F30270BE96700198AA5 /* Build configuration list for PBXProject "OptionalDemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				97F26F34270BE96700198AA5 /* optionalDemo */,
+				97F26F34270BE96700198AA5 /* OptionalDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +263,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97F26F30270BE96700198AA5 /* Build configuration list for PBXProject "optionalDemo" */ = {
+		97F26F30270BE96700198AA5 /* Build configuration list for PBXProject "OptionalDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97F26F3A270BE96700198AA5 /* Debug */,
@@ -272,7 +272,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97F26F3C270BE96700198AA5 /* Build configuration list for PBXNativeTarget "optionalDemo" */ = {
+		97F26F3C270BE96700198AA5 /* Build configuration list for PBXNativeTarget "OptionalDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97F26F3D270BE96700198AA5 /* Debug */,

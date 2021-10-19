@@ -5,7 +5,15 @@
 //  Created by 한송희 on 2021/10/05.
 //
 
-import Foundation
+struct MyOptional {
+    var property = 123
+    func method() {
+        print("I am the struct's method.")
+    }
+}
 
-print("Hello, World!")
+let myOptional: MyOptional?
 
+myOptional = MyOptional()
+
+print(myOptional?.method())
