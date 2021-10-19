@@ -1,5 +1,6 @@
 import UIKit
 
+<<<<<<< HEAD
 extension UIButton {
     func makeCircular() {
         self.clipsToBounds = true
@@ -34,3 +35,6 @@ button.makeCircular()
 
 
 
+=======
+var greeting = "Hello, playground"
+>>>>>>> origin/master
