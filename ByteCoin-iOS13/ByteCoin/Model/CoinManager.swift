@@ -8,18 +8,35 @@
 
 import Foundation
 
+
+private var apiKey : String {
+    get {
+        guard let filePath = Bundle.main.path(forResource: "Key", ofType: "plist") else {
+            fatalError("couldn't find file 'Key.plist'.")
+    }
+    
+    let plist = NSDictionary(contentsOfFile: filePath)
+                                              
+    guard let value = plist?.object(forKey: "ByteCoin_Key") as? String else {
+    fatalError("Couldn't find key 'ByteCoin_Key' in 'KeyList.plist'.")
+    }
+    return value
+    }
+}
+
+
 struct CoinManager {
     
     let baseURL = "https://rest.coinapi.io/v1/exchangerate/BTC"
-    let apiKey = "CFA025F3-1722-49A1-9B33-027FDD63F002"
     
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
 
     
+    
     func getCoinPrice(for currency: String) {
         
         let urlString = "\(baseURL)/\(currency)?apikey=\(apiKey)"
-            
+
         
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
@@ -36,4 +53,5 @@ struct CoinManager {
             task.resume()
         }
     }
+    
 }
